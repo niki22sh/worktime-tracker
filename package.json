@@ -1,0 +1,47 @@
+{
+  "name": "worktime-tracker",
+  "version": "1.0.0",
+  "description": "Сервіс обліку робочого часу — контроль входу/виходу, звіти, аналітика",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --coverage --coverageReporters=lcov --coverageReporters=html --coverageReporters=text",
+    "test:unit": "jest tests/unit --coverage",
+    "test:integration": "jest tests/integration --coverage",
+    "test:ci": "jest --coverage --coverageReporters=lcov --coverageReporters=cobertura --reporters=default --reporters=jest-junit",
+    "lint": "eslint src/ tests/",
+    "start": "node src/index.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    },
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "reporters": [
+      "default",
+      ["jest-junit", {
+        "outputDirectory": "reports",
+        "outputName": "junit.xml",
+        "classNameTemplate": "{classname}",
+        "titleTemplate": "{title}"
+      }]
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0"
+  }
+}

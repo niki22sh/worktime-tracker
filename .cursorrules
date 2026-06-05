@@ -1,0 +1,59 @@
+# .cursorrules — Worktime Tracker
+# AI agent constraints for Cursor, Claude, GitHub Copilot
+# ═══════════════════════════════════════════════════════
+
+## MANDATORY RULES (never violate)
+
+### Architecture
+- NEVER use external databases (PostgreSQL, MongoDB, Redis, SQLite, etc.)
+- NEVER use external HTTP APIs or third-party services
+- ALL persistence must be In-Memory using Map/Array collections
+- ALL storage implementations must extend an Interface (IEmployeeRepository, ITimeEntryRepository, ILeaveRepository)
+- NEVER add runtime dependencies to package.json (devDependencies only for jest, jest-junit)
+
+### Interfaces & Contracts
+- NEVER generate a concrete class without a corresponding Interface (I-prefixed)
+- Interfaces live in src/storage/ (repositories) or src/services/ (strategies)
+- Every interface method must throw new Error('Not implemented')
+
+### Testing (TDD)
+- NEVER generate business logic without accompanying tests
+- Tests MUST go in tests/unit/ or tests/integration/
+- Each test file must have at minimum 10 test cases
+- Use jest.fn() for mocks — NEVER use sinon or other mock libraries
+- Coverage target: minimum 70% lines, branches, functions, statements
+
+### Code Quality
+- ALWAYS use 'use strict' at the top of every file
+- ALWAYS add JSDoc comments to public methods and classes
+- NEVER use var — use const or let only
+- ALWAYS validate inputs using src/utils/validators.js
+- NEVER throw generic Error for validation — always throw TypeError with a descriptive message
+
+### Design Patterns (GoF — minimum 2 required)
+- Strategy pattern: OvertimeStrategy (StandardOvertimeStrategy, DoubleTimeOvertimeStrategy, TieredOvertimeStrategy, CompTimeOvertimeStrategy)
+- Observer pattern: EventEmitter — EmployeeService and TimeTrackingService extend it and emit domain events
+
+### SOLID Principles
+- S — Single Responsibility: each class has one reason to change
+- O — Open/Closed: extend via new Strategy implementations, not by modifying existing ones
+- L — Liskov: all repository implementations are interchangeable with their interfaces
+- I — Interface Segregation: keep interfaces small and focused
+- D — Dependency Inversion: services receive repositories via constructor injection
+
+### File Structure (do not deviate)
+src/models/        → Domain entities (Employee, TimeEntry, Leave)
+src/services/      → Business logic (EmployeeService, TimeTrackingService, LeaveService, ReportService, OvertimeStrategy)
+src/storage/       → Interfaces + InMemory implementations
+src/utils/         → Pure helpers (validators, dateUtils, idGenerator, EventEmitter)
+tests/unit/        → Unit tests (one file per module)
+tests/integration/ → Integration / scenario tests
+docs/diagrams/     → UML diagrams (Mermaid .md files)
+.cursor/rules/     → AI context files
+
+### Forbidden
+- NO express, fastify, koa or any HTTP framework
+- NO moment.js, dayjs, date-fns or any date library (use src/utils/dateUtils.js)
+- NO lodash, ramda or utility libraries
+- NO class-validator, joi, yup (use src/utils/validators.js)
+- NO uuid library (use src/utils/idGenerator.js)
