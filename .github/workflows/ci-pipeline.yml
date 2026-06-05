@@ -56,21 +56,9 @@ jobs:
             coverage/lcov.info
           retention-days: 30
 
-      # ─── 7. Install sonar-scanner and run analysis ─────────────────────────
-      # Встановлюємо sonar-scanner вручну через npm щоб уникнути
-      # проблеми з HTTP 403 при завантаженні JRE від SonarCloud
+      # ─── 7. SonarCloud analysis ────────────────────────────────────────────
       - name: Install sonar-scanner
         run: npm install -g sonar-scanner
 
       - name: SonarCloud Scan
-        run: |
-          sonar-scanner \
-            -Dsonar.projectKey=niki22sh_worktime-tracker \
-            -Dsonar.organization=niki22sh \
-            -Dsonar.sources=src \
-            -Dsonar.tests=tests \
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-            -Dsonar.host.url=https://sonarcloud.io
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=${{ secrets.SONAR_TOKEN }}
