@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="323" failures="0" errors="0" time="1.402">
+  <testsuite name="dateUtils" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.846" tests="26">
+    <testcase classname="dateUtils startOfDay sets time to midnight" name="dateUtils startOfDay sets time to midnight" time="0.01">
+    </testcase>
+    <testcase classname="dateUtils startOfDay does not mutate the input" name="dateUtils startOfDay does not mutate the input" time="0">
+    </testcase>
+    <testcase classname="dateUtils endOfDay sets time to 23:59:59.999" name="dateUtils endOfDay sets time to 23:59:59.999" time="0">
+    </testcase>
+    <testcase classname="dateUtils startOfWeek returns Monday for a Wednesday" name="dateUtils startOfWeek returns Monday for a Wednesday" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils startOfWeek returns same day if already Monday" name="dateUtils startOfWeek returns same day if already Monday" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils startOfWeek handles Sunday correctly (goes to previous Monday)" name="dateUtils startOfWeek handles Sunday correctly (goes to previous Monday)" time="0">
+    </testcase>
+    <testcase classname="dateUtils endOfWeek returns Sunday" name="dateUtils endOfWeek returns Sunday" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils startOfMonth returns first day of month at midnight" name="dateUtils startOfMonth returns first day of month at midnight" time="0">
+    </testcase>
+    <testcase classname="dateUtils endOfMonth returns last day of month" name="dateUtils endOfMonth returns last day of month" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils endOfMonth handles 31-day months" name="dateUtils endOfMonth handles 31-day months" time="0">
+    </testcase>
+    <testcase classname="dateUtils endOfMonth handles 30-day months" name="dateUtils endOfMonth handles 30-day months" time="0">
+    </testcase>
+    <testcase classname="dateUtils rangesOverlap returns true for fully overlapping ranges" name="dateUtils rangesOverlap returns true for fully overlapping ranges" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils rangesOverlap returns true for contained ranges" name="dateUtils rangesOverlap returns true for contained ranges" time="0">
+    </testcase>
+    <testcase classname="dateUtils rangesOverlap returns true when ranges touch at one point" name="dateUtils rangesOverlap returns true when ranges touch at one point" time="0">
+    </testcase>
+    <testcase classname="dateUtils rangesOverlap returns false for non-overlapping ranges" name="dateUtils rangesOverlap returns false for non-overlapping ranges" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils rangesOverlap returns false when B is before A" name="dateUtils rangesOverlap returns false when B is before A" time="0">
+    </testcase>
+    <testcase classname="dateUtils isBetween returns true for date within range" name="dateUtils isBetween returns true for date within range" time="0">
+    </testcase>
+    <testcase classname="dateUtils isBetween returns true for date on boundary" name="dateUtils isBetween returns true for date on boundary" time="0">
+    </testcase>
+    <testcase classname="dateUtils isBetween returns false for date outside range" name="dateUtils isBetween returns false for date outside range" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils toISODateString formats to YYYY-MM-DD" name="dateUtils toISODateString formats to YYYY-MM-DD" time="0">
+    </testcase>
+    <testcase classname="dateUtils msToHours converts 3600000ms to 1 hour" name="dateUtils msToHours converts 3600000ms to 1 hour" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils msToHours converts 5400000ms to 1.5 hours" name="dateUtils msToHours converts 5400000ms to 1.5 hours" time="0">
+    </testcase>
+    <testcase classname="dateUtils msToHours converts 0ms to 0 hours" name="dateUtils msToHours converts 0ms to 0 hours" time="0">
+    </testcase>
+    <testcase classname="dateUtils eachDayBetween returns 1 day for same start/end" name="dateUtils eachDayBetween returns 1 day for same start/end" time="0.001">
+    </testcase>
+    <testcase classname="dateUtils eachDayBetween returns 7 days for a week" name="dateUtils eachDayBetween returns 7 days for a week" time="0">
+    </testcase>
+    <testcase classname="dateUtils eachDayBetween each element is at midnight" name="dateUtils eachDayBetween each element is at midnight" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="EventEmitter" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.838" tests="9">
+    <testcase classname="EventEmitter emits event to registered listener" name="EventEmitter emits event to registered listener" time="0.011">
+    </testcase>
+    <testcase classname="EventEmitter emits to multiple listeners" name="EventEmitter emits to multiple listeners" time="0.001">
+    </testcase>
+    <testcase classname="EventEmitter does not fire after off" name="EventEmitter does not fire after off" time="0">
+    </testcase>
+    <testcase classname="EventEmitter off is a no-op for unknown event" name="EventEmitter off is a no-op for unknown event" time="0.001">
+    </testcase>
+    <testcase classname="EventEmitter emit is a no-op for unknown event" name="EventEmitter emit is a no-op for unknown event" time="0.001">
+    </testcase>
+    <testcase classname="EventEmitter removeAllListeners removes specific event" name="EventEmitter removeAllListeners removes specific event" time="0">
+    </testcase>
+    <testcase classname="EventEmitter removeAllListeners without arg clears all" name="EventEmitter removeAllListeners without arg clears all" time="0.001">
+    </testcase>
+    <testcase classname="EventEmitter listenerCount returns correct count" name="EventEmitter listenerCount returns correct count" time="0">
+    </testcase>
+    <testcase classname="EventEmitter on returns emitter for chaining" name="EventEmitter on returns emitter for chaining" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="validators" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.885" tests="32">
+    <testcase classname="validators validateString accepts a non-empty string" name="validators validateString accepts a non-empty string" time="0.011">
+    </testcase>
+    <testcase classname="validators validateString throws for empty string" name="validators validateString throws for empty string" time="0.018">
+    </testcase>
+    <testcase classname="validators validateString throws for whitespace-only string" name="validators validateString throws for whitespace-only string" time="0.001">
+    </testcase>
+    <testcase classname="validators validateString throws for number" name="validators validateString throws for number" time="0.001">
+    </testcase>
+    <testcase classname="validators validateString throws for null" name="validators validateString throws for null" time="0.001">
+    </testcase>
+    <testcase classname="validators validateString throws for undefined" name="validators validateString throws for undefined" time="0.001">
+    </testcase>
+    <testcase classname="validators validateString includes field name in error message" name="validators validateString includes field name in error message" time="0.001">
+    </testcase>
+    <testcase classname="validators validateEmail accepts valid email" name="validators validateEmail accepts valid email" time="0">
+    </testcase>
+    <testcase classname="validators validateEmail accepts email with subdomain" name="validators validateEmail accepts email with subdomain" time="0.001">
+    </testcase>
+    <testcase classname="validators validateEmail throws for missing @" name="validators validateEmail throws for missing @" time="0.001">
+    </testcase>
+    <testcase classname="validators validateEmail throws for missing domain" name="validators validateEmail throws for missing domain" time="0.001">
+    </testcase>
+    <testcase classname="validators validateEmail throws for number" name="validators validateEmail throws for number" time="0">
+    </testcase>
+    <testcase classname="validators validateEmail throws for empty string" name="validators validateEmail throws for empty string" time="0">
+    </testcase>
+    <testcase classname="validators validateDate accepts a valid Date" name="validators validateDate accepts a valid Date" time="0.001">
+    </testcase>
+    <testcase classname="validators validateDate throws for invalid Date" name="validators validateDate throws for invalid Date" time="0">
+    </testcase>
+    <testcase classname="validators validateDate throws for string" name="validators validateDate throws for string" time="0">
+    </testcase>
+    <testcase classname="validators validateDate throws for null" name="validators validateDate throws for null" time="0.001">
+    </testcase>
+    <testcase classname="validators validateDate throws for number" name="validators validateDate throws for number" time="0.001">
+    </testcase>
+    <testcase classname="validators validateEnum accepts allowed value" name="validators validateEnum accepts allowed value" time="0">
+    </testcase>
+    <testcase classname="validators validateEnum throws for not-allowed value" name="validators validateEnum throws for not-allowed value" time="0.001">
+    </testcase>
+    <testcase classname="validators validateEnum throws for null" name="validators validateEnum throws for null" time="0">
+    </testcase>
+    <testcase classname="validators validateEnum includes field name in message" name="validators validateEnum includes field name in message" time="0">
+    </testcase>
+    <testcase classname="validators validatePositiveNumber accepts positive integer" name="validators validatePositiveNumber accepts positive integer" time="0.001">
+    </testcase>
+    <testcase classname="validators validatePositiveNumber accepts positive float" name="validators validatePositiveNumber accepts positive float" time="0">
+    </testcase>
+    <testcase classname="validators validatePositiveNumber throws for zero" name="validators validatePositiveNumber throws for zero" time="0.001">
+    </testcase>
+    <testcase classname="validators validatePositiveNumber throws for negative" name="validators validatePositiveNumber throws for negative" time="0.001">
+    </testcase>
+    <testcase classname="validators validatePositiveNumber throws for NaN" name="validators validatePositiveNumber throws for NaN" time="0">
+    </testcase>
+    <testcase classname="validators validatePositiveNumber throws for string" name="validators validatePositiveNumber throws for string" time="0.001">
+    </testcase>
+    <testcase classname="validators validateNonNegativeNumber accepts zero" name="validators validateNonNegativeNumber accepts zero" time="0">
+    </testcase>
+    <testcase classname="validators validateNonNegativeNumber accepts positive" name="validators validateNonNegativeNumber accepts positive" time="0.001">
+    </testcase>
+    <testcase classname="validators validateNonNegativeNumber throws for negative" name="validators validateNonNegativeNumber throws for negative" time="0.001">
+    </testcase>
+    <testcase classname="validators validateNonNegativeNumber throws for NaN" name="validators validateNonNegativeNumber throws for NaN" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="Employee model" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.893" tests="16">
+    <testcase classname="Employee model constructor creates employee with valid params" name="Employee model constructor creates employee with valid params" time="0.012">
+    </testcase>
+    <testcase classname="Employee model constructor normalises email to lowercase" name="Employee model constructor normalises email to lowercase" time="0">
+    </testcase>
+    <testcase classname="Employee model constructor accepts explicit status" name="Employee model constructor accepts explicit status" time="0.001">
+    </testcase>
+    <testcase classname="Employee model constructor defaults createdAt to now" name="Employee model constructor defaults createdAt to now" time="0">
+    </testcase>
+    <testcase classname="Employee model constructor throws for missing id" name="Employee model constructor throws for missing id" time="0.024">
+    </testcase>
+    <testcase classname="Employee model constructor throws for invalid email" name="Employee model constructor throws for invalid email" time="0.005">
+    </testcase>
+    <testcase classname="Employee model constructor throws for invalid role" name="Employee model constructor throws for invalid role" time="0.002">
+    </testcase>
+    <testcase classname="Employee model constructor throws for missing firstName" name="Employee model constructor throws for missing firstName" time="0.001">
+    </testcase>
+    <testcase classname="Employee model constructor throws for missing department" name="Employee model constructor throws for missing department" time="0.001">
+    </testcase>
+    <testcase classname="Employee model fullName getter concatenates first and last name" name="Employee model fullName getter concatenates first and last name" time="0">
+    </testcase>
+    <testcase classname="Employee model status methods isActive returns true for ACTIVE" name="Employee model status methods isActive returns true for ACTIVE" time="0.001">
+    </testcase>
+    <testcase classname="Employee model status methods isBlocked returns false for ACTIVE" name="Employee model status methods isBlocked returns false for ACTIVE" time="0">
+    </testcase>
+    <testcase classname="Employee model status methods block changes status to BLOCKED" name="Employee model status methods block changes status to BLOCKED" time="0">
+    </testcase>
+    <testcase classname="Employee model status methods activate changes status to ACTIVE" name="Employee model status methods activate changes status to ACTIVE" time="0.001">
+    </testcase>
+    <testcase classname="Employee model status methods deactivate changes status to INACTIVE" name="Employee model status methods deactivate changes status to INACTIVE" time="0">
+    </testcase>
+    <testcase classname="Employee model toJSON returns plain object with all fields" name="Employee model toJSON returns plain object with all fields" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="Leave model" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.874" tests="18">
+    <testcase classname="Leave model constructor creates leave with valid params" name="Leave model constructor creates leave with valid params" time="0.012">
+    </testcase>
+    <testcase classname="Leave model constructor throws if endDate before startDate" name="Leave model constructor throws if endDate before startDate" time="0.02">
+    </testcase>
+    <testcase classname="Leave model constructor allows same start and end (single day)" name="Leave model constructor allows same start and end (single day)" time="0.001">
+    </testcase>
+    <testcase classname="Leave model constructor throws for invalid type" name="Leave model constructor throws for invalid type" time="0.005">
+    </testcase>
+    <testcase classname="Leave model constructor throws for missing employeeId" name="Leave model constructor throws for missing employeeId" time="0.001">
+    </testcase>
+    <testcase classname="Leave model constructor throws for invalid startDate" name="Leave model constructor throws for invalid startDate" time="0">
+    </testcase>
+    <testcase classname="Leave model constructor throws for invalid endDate" name="Leave model constructor throws for invalid endDate" time="0">
+    </testcase>
+    <testcase classname="Leave model getDurationDays returns 14 for 2-week leave" name="Leave model getDurationDays returns 14 for 2-week leave" time="0">
+    </testcase>
+    <testcase classname="Leave model getDurationDays returns 1 for single-day leave" name="Leave model getDurationDays returns 1 for single-day leave" time="0.001">
+    </testcase>
+    <testcase classname="Leave model approve approves pending leave" name="Leave model approve approves pending leave" time="0">
+    </testcase>
+    <testcase classname="Leave model approve throws if not pending" name="Leave model approve throws if not pending" time="0.001">
+    </testcase>
+    <testcase classname="Leave model approve throws for empty approverId" name="Leave model approve throws for empty approverId" time="0.001">
+    </testcase>
+    <testcase classname="Leave model reject rejects pending leave" name="Leave model reject rejects pending leave" time="0.001">
+    </testcase>
+    <testcase classname="Leave model reject throws if not pending" name="Leave model reject throws if not pending" time="0">
+    </testcase>
+    <testcase classname="Leave model cancel cancels a leave" name="Leave model cancel cancels a leave" time="0.001">
+    </testcase>
+    <testcase classname="Leave model cancel throws if already cancelled" name="Leave model cancel throws if already cancelled" time="0">
+    </testcase>
+    <testcase classname="Leave model isPending / isApproved new leave isPending" name="Leave model isPending / isApproved new leave isPending" time="0">
+    </testcase>
+    <testcase classname="Leave model toJSON includes durationDays" name="Leave model toJSON includes durationDays" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="OvertimeStrategy" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.886" tests="16">
+    <testcase classname="OvertimeStrategy IOvertimeStrategy (base) throws Not Implemented" name="OvertimeStrategy IOvertimeStrategy (base) throws Not Implemented" time="0.03">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) returns 0 overtime when within regular hours" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) returns 0 overtime when within regular hours" time="0.001">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) calculates 2h overtime at 1.5×" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) calculates 2h overtime at 1.5×" time="0.002">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) works with partial hours" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) works with partial hours" time="0.001">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) returns 0 overtime when worked less than regular" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) returns 0 overtime when worked less than regular" time="0">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) throws for negative hours" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) throws for negative hours" time="0.012">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) throws for invalid hourlyRate" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) throws for invalid hourlyRate" time="0.002">
+    </testcase>
+    <testcase classname="OvertimeStrategy StandardOvertimeStrategy (1.5×) works with zero hourly rate" name="OvertimeStrategy StandardOvertimeStrategy (1.5×) works with zero hourly rate" time="0.001">
+    </testcase>
+    <testcase classname="OvertimeStrategy DoubleTimeOvertimeStrategy (2×) calculates 2h overtime at 2×" name="OvertimeStrategy DoubleTimeOvertimeStrategy (2×) calculates 2h overtime at 2×" time="0.001">
+    </testcase>
+    <testcase classname="OvertimeStrategy DoubleTimeOvertimeStrategy (2×) returns 0 overtime within hours" name="OvertimeStrategy DoubleTimeOvertimeStrategy (2×) returns 0 overtime within hours" time="0">
+    </testcase>
+    <testcase classname="OvertimeStrategy TieredOvertimeStrategy calculates tier-1 only when overtime &lt;= 2h" name="OvertimeStrategy TieredOvertimeStrategy calculates tier-1 only when overtime &lt;= 2h" time="0">
+    </testcase>
+    <testcase classname="OvertimeStrategy TieredOvertimeStrategy calculates both tiers when overtime &gt; 2h" name="OvertimeStrategy TieredOvertimeStrategy calculates both tiers when overtime &gt; 2h" time="0.001">
+    </testcase>
+    <testcase classname="OvertimeStrategy TieredOvertimeStrategy exactly at tier boundary" name="OvertimeStrategy TieredOvertimeStrategy exactly at tier boundary" time="0">
+    </testcase>
+    <testcase classname="OvertimeStrategy TieredOvertimeStrategy uses custom tier limit" name="OvertimeStrategy TieredOvertimeStrategy uses custom tier limit" time="0">
+    </testcase>
+    <testcase classname="OvertimeStrategy CompTimeOvertimeStrategy returns 0 pay with comp time hours" name="OvertimeStrategy CompTimeOvertimeStrategy returns 0 pay with comp time hours" time="0">
+    </testcase>
+    <testcase classname="OvertimeStrategy CompTimeOvertimeStrategy returns 0 everything within hours" name="OvertimeStrategy CompTimeOvertimeStrategy returns 0 everything within hours" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="InMemoryEmployeeRepository" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.909" tests="28">
+    <testcase classname="InMemoryEmployeeRepository saves and retrieves by id" name="InMemoryEmployeeRepository saves and retrieves by id" time="0.011">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository returns null for unknown id" name="InMemoryEmployeeRepository returns null for unknown id" time="0">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository findAll returns all saved employees" name="InMemoryEmployeeRepository findAll returns all saved employees" time="0">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository findByEmail is case-insensitive" name="InMemoryEmployeeRepository findByEmail is case-insensitive" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository findByEmail returns null when not found" name="InMemoryEmployeeRepository findByEmail returns null when not found" time="0">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository findByDepartment filters correctly" name="InMemoryEmployeeRepository findByDepartment filters correctly" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository delete removes employee" name="InMemoryEmployeeRepository delete removes employee" time="0">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository delete returns false for unknown id" name="InMemoryEmployeeRepository delete returns false for unknown id" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository clear empties the store" name="InMemoryEmployeeRepository clear empties the store" time="0">
+    </testcase>
+    <testcase classname="InMemoryEmployeeRepository save overwrites existing record" name="InMemoryEmployeeRepository save overwrites existing record" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository saves and retrieves by id" name="InMemoryTimeEntryRepository saves and retrieves by id" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository returns null for unknown id" name="InMemoryTimeEntryRepository returns null for unknown id" time="0">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository findByEmployeeId returns matching entries" name="InMemoryTimeEntryRepository findByEmployeeId returns matching entries" time="0">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository findByDateRange filters by clockIn" name="InMemoryTimeEntryRepository findByDateRange filters by clockIn" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository findByEmployeeIdAndDateRange combines filters" name="InMemoryTimeEntryRepository findByEmployeeIdAndDateRange combines filters" time="0">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository findOpenEntry returns open entry" name="InMemoryTimeEntryRepository findOpenEntry returns open entry" time="0">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository findOpenEntry returns null when entry is closed" name="InMemoryTimeEntryRepository findOpenEntry returns null when entry is closed" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository findOpenEntry returns null when no entries" name="InMemoryTimeEntryRepository findOpenEntry returns null when no entries" time="0">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository delete removes entry" name="InMemoryTimeEntryRepository delete removes entry" time="0">
+    </testcase>
+    <testcase classname="InMemoryTimeEntryRepository clear empties store" name="InMemoryTimeEntryRepository clear empties store" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository saves and retrieves by id" name="InMemoryLeaveRepository saves and retrieves by id" time="0">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository returns null for unknown id" name="InMemoryLeaveRepository returns null for unknown id" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository findByEmployeeId filters correctly" name="InMemoryLeaveRepository findByEmployeeId filters correctly" time="0">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository findByStatus filters correctly" name="InMemoryLeaveRepository findByStatus filters correctly" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository findByEmployeeIdAndDateRange uses overlap logic" name="InMemoryLeaveRepository findByEmployeeIdAndDateRange uses overlap logic" time="0">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository findByEmployeeIdAndDateRange returns empty for non-overlapping" name="InMemoryLeaveRepository findByEmployeeIdAndDateRange returns empty for non-overlapping" time="0">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository delete removes leave" name="InMemoryLeaveRepository delete removes leave" time="0.001">
+    </testcase>
+    <testcase classname="InMemoryLeaveRepository clear empties store" name="InMemoryLeaveRepository clear empties store" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="TimeEntry model" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.92" tests="18">
+    <testcase classname="TimeEntry model constructor creates entry with valid params" name="TimeEntry model constructor creates entry with valid params" time="0.012">
+    </testcase>
+    <testcase classname="TimeEntry model constructor accepts clockOut in constructor" name="TimeEntry model constructor accepts clockOut in constructor" time="0.001">
+    </testcase>
+    <testcase classname="TimeEntry model constructor throws for missing id" name="TimeEntry model constructor throws for missing id" time="0.037">
+    </testcase>
+    <testcase classname="TimeEntry model constructor throws for missing employeeId" name="TimeEntry model constructor throws for missing employeeId" time="0.001">
+    </testcase>
+    <testcase classname="TimeEntry model constructor throws for invalid clockIn" name="TimeEntry model constructor throws for invalid clockIn" time="0.001">
+    </testcase>
+    <testcase classname="TimeEntry model constructor throws for invalid clockOut" name="TimeEntry model constructor throws for invalid clockOut" time="0.001">
+    </testcase>
+    <testcase classname="TimeEntry model getDurationMs returns null for open entry" name="TimeEntry model getDurationMs returns null for open entry" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model getDurationMs returns correct ms for 8-hour shift" name="TimeEntry model getDurationMs returns correct ms for 8-hour shift" time="0.001">
+    </testcase>
+    <testcase classname="TimeEntry model getDurationHours returns null for open entry" name="TimeEntry model getDurationHours returns null for open entry" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model getDurationHours returns 8 for 8-hour shift" name="TimeEntry model getDurationHours returns 8 for 8-hour shift" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model close closes the entry" name="TimeEntry model close closes the entry" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model close throws if clockOut before clockIn" name="TimeEntry model close throws if clockOut before clockIn" time="0.001">
+    </testcase>
+    <testcase classname="TimeEntry model close throws for invalid date" name="TimeEntry model close throws for invalid date" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model adjust adjusts the entry" name="TimeEntry model adjust adjusts the entry" time="0.002">
+    </testcase>
+    <testcase classname="TimeEntry model adjust throws if adjusted clockOut before clockIn" name="TimeEntry model adjust throws if adjusted clockOut before clockIn" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model isOpen / isClosed new entry is open" name="TimeEntry model isOpen / isClosed new entry is open" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model isOpen / isClosed closed entry is not open" name="TimeEntry model isOpen / isClosed closed entry is not open" time="0">
+    </testcase>
+    <testcase classname="TimeEntry model toJSON includes durationHours field" name="TimeEntry model toJSON includes durationHours field" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="ReportService" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:36" time="0.938" tests="46">
+    <testcase classname="ReportService getDailyReport returns report with correct date string" name="ReportService getDailyReport returns report with correct date string" time="0.012">
+    </testcase>
+    <testcase classname="ReportService getDailyReport includes employee with hours worked" name="ReportService getDailyReport includes employee with hours worked" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getDailyReport shows 0 hours for employee with no entries that day" name="ReportService getDailyReport shows 0 hours for employee with no entries that day" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getDailyReport marks employee as clocked in when open entry exists" name="ReportService getDailyReport marks employee as clocked in when open entry exists" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getDailyReport marks employee as not clocked in when no open entry" name="ReportService getDailyReport marks employee as not clocked in when no open entry" time="0">
+    </testcase>
+    <testcase classname="ReportService getDailyReport throws for invalid date" name="ReportService getDailyReport throws for invalid date" time="0.034">
+    </testcase>
+    <testcase classname="ReportService getDailyReport counts total entries across all employees" name="ReportService getDailyReport counts total entries across all employees" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getDailyReport does not count entries from other days" name="ReportService getDailyReport does not count entries from other days" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport returns correct worked hours for the week" name="ReportService getWeeklyReport returns correct worked hours for the week" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport calculates overtime using default StandardStrategy" name="ReportService getWeeklyReport calculates overtime using default StandardStrategy" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport includes employee fullName when employee exists" name="ReportService getWeeklyReport includes employee fullName when employee exists" time="0">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport handles null fullName for unknown employee" name="ReportService getWeeklyReport handles null fullName for unknown employee" time="0">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport returns 0 worked hours for employee with no entries" name="ReportService getWeeklyReport returns 0 worked hours for employee with no entries" time="0">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport throws for invalid employeeId" name="ReportService getWeeklyReport throws for invalid employeeId" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport throws for invalid weekDate" name="ReportService getWeeklyReport throws for invalid weekDate" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getWeeklyReport includes entries array in report" name="ReportService getWeeklyReport includes entries array in report" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport returns correct month and year" name="ReportService getMonthlyReport returns correct month and year" time="0">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport counts working days correctly for March 2024" name="ReportService getMonthlyReport counts working days correctly for March 2024" time="0">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport calculates worked hours across the month" name="ReportService getMonthlyReport calculates worked hours across the month" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport calculates overtime using strategy" name="ReportService getMonthlyReport calculates overtime using strategy" time="0.002">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport includes employee fullName" name="ReportService getMonthlyReport includes employee fullName" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport handles unknown employee (null fullName)" name="ReportService getMonthlyReport handles unknown employee (null fullName)" time="0">
+    </testcase>
+    <testcase classname="ReportService getMonthlyReport returns 0 hours when no entries" name="ReportService getMonthlyReport returns 0 hours when no entries" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary aggregates hours by department" name="ReportService getDepartmentSummary aggregates hours by department" time="0">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary skips open entries" name="ReportService getDepartmentSummary skips open entries" time="0">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary returns empty array when no entries" name="ReportService getDepartmentSummary returns empty array when no entries" time="0">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary skips entries for unknown employees" name="ReportService getDepartmentSummary skips entries for unknown employees" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary counts unique employees per department" name="ReportService getDepartmentSummary counts unique employees per department" time="0">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary throws for invalid from date" name="ReportService getDepartmentSummary throws for invalid from date" time="0">
+    </testcase>
+    <testcase classname="ReportService getDepartmentSummary throws for invalid to date" name="ReportService getDepartmentSummary throws for invalid to date" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getLateArrivals returns entries with clockIn after expected hour" name="ReportService getLateArrivals returns entries with clockIn after expected hour" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getLateArrivals uses custom expected hour" name="ReportService getLateArrivals uses custom expected hour" time="0">
+    </testcase>
+    <testcase classname="ReportService getLateArrivals returns empty array when no late arrivals" name="ReportService getLateArrivals returns empty array when no late arrivals" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getLateArrivals throws for invalid date range" name="ReportService getLateArrivals throws for invalid date range" time="0">
+    </testcase>
+    <testcase classname="ReportService getLongWorkdays returns employees working more than threshold" name="ReportService getLongWorkdays returns employees working more than threshold" time="0">
+    </testcase>
+    <testcase classname="ReportService getLongWorkdays returns empty when all under threshold" name="ReportService getLongWorkdays returns empty when all under threshold" time="0">
+    </testcase>
+    <testcase classname="ReportService getLongWorkdays uses default threshold of 10" name="ReportService getLongWorkdays uses default threshold of 10" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getLongWorkdays throws for invalid date" name="ReportService getLongWorkdays throws for invalid date" time="0">
+    </testcase>
+    <testcase classname="ReportService getTopWorkers returns top N employees sorted by hours" name="ReportService getTopWorkers returns top N employees sorted by hours" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getTopWorkers uses default topN of 5" name="ReportService getTopWorkers uses default topN of 5" time="0.001">
+    </testcase>
+    <testcase classname="ReportService getTopWorkers returns fewer results when not enough employees" name="ReportService getTopWorkers returns fewer results when not enough employees" time="0">
+    </testcase>
+    <testcase classname="ReportService getTopWorkers uses employeeId as fullName fallback when employee not found" name="ReportService getTopWorkers uses employeeId as fullName fallback when employee not found" time="0">
+    </testcase>
+    <testcase classname="ReportService getTopWorkers throws for invalid date range" name="ReportService getTopWorkers throws for invalid date range" time="0.001">
+    </testcase>
+    <testcase classname="ReportService setOvertimeStrategy switches strategy for weekly report" name="ReportService setOvertimeStrategy switches strategy for weekly report" time="0.001">
+    </testcase>
+    <testcase classname="ReportService setOvertimeStrategy can switch to TieredOvertimeStrategy" name="ReportService setOvertimeStrategy can switch to TieredOvertimeStrategy" time="0">
+    </testcase>
+    <testcase classname="ReportService setOvertimeStrategy can switch to CompTimeOvertimeStrategy" name="ReportService setOvertimeStrategy can switch to CompTimeOvertimeStrategy" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="EmployeeService" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:36" time="0.961" tests="28">
+    <testcase classname="EmployeeService register creates and returns a new employee" name="EmployeeService register creates and returns a new employee" time="0.011">
+    </testcase>
+    <testcase classname="EmployeeService register emits employee:registered event" name="EmployeeService register emits employee:registered event" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService register throws if email already exists" name="EmployeeService register throws if email already exists" time="0.024">
+    </testcase>
+    <testcase classname="EmployeeService register throws for missing firstName" name="EmployeeService register throws for missing firstName" time="0.004">
+    </testcase>
+    <testcase classname="EmployeeService register throws for invalid email" name="EmployeeService register throws for invalid email" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService register throws for invalid role" name="EmployeeService register throws for invalid role" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService register trims whitespace from names" name="EmployeeService register trims whitespace from names" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService getAll returns empty array initially" name="EmployeeService getAll returns empty array initially" time="0">
+    </testcase>
+    <testcase classname="EmployeeService getAll returns all registered employees" name="EmployeeService getAll returns all registered employees" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService getById returns employee by id" name="EmployeeService getById returns employee by id" time="0">
+    </testcase>
+    <testcase classname="EmployeeService getById throws for unknown id" name="EmployeeService getById throws for unknown id" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService findByEmail returns employee or null" name="EmployeeService findByEmail returns employee or null" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService getByDepartment returns only employees from that department" name="EmployeeService getByDepartment returns only employees from that department" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService getByDepartment throws for empty department" name="EmployeeService getByDepartment throws for empty department" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService update updates allowed fields" name="EmployeeService update updates allowed fields" time="0">
+    </testcase>
+    <testcase classname="EmployeeService update emits employee:updated event" name="EmployeeService update emits employee:updated event" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService update throws for unknown id" name="EmployeeService update throws for unknown id" time="0">
+    </testcase>
+    <testcase classname="EmployeeService update throws for empty firstName update" name="EmployeeService update throws for empty firstName update" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService update throws for invalid role update" name="EmployeeService update throws for invalid role update" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService block / activate / deactivate block sets status to BLOCKED" name="EmployeeService block / activate / deactivate block sets status to BLOCKED" time="0">
+    </testcase>
+    <testcase classname="EmployeeService block / activate / deactivate block throws if already blocked" name="EmployeeService block / activate / deactivate block throws if already blocked" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService block / activate / deactivate activate unblocks an employee" name="EmployeeService block / activate / deactivate activate unblocks an employee" time="0">
+    </testcase>
+    <testcase classname="EmployeeService block / activate / deactivate activate throws if already active" name="EmployeeService block / activate / deactivate activate throws if already active" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService block / activate / deactivate deactivate sets status to INACTIVE" name="EmployeeService block / activate / deactivate deactivate sets status to INACTIVE" time="0">
+    </testcase>
+    <testcase classname="EmployeeService block / activate / deactivate emits block/activate/deactivate events" name="EmployeeService block / activate / deactivate emits block/activate/deactivate events" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService getActiveCount counts only active employees" name="EmployeeService getActiveCount counts only active employees" time="0">
+    </testcase>
+    <testcase classname="EmployeeService getDepartmentStats returns correct head counts" name="EmployeeService getDepartmentStats returns correct head counts" time="0.001">
+    </testcase>
+    <testcase classname="EmployeeService getDepartmentStats returns empty array when no employees" name="EmployeeService getDepartmentStats returns empty array when no employees" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="TimeTrackingService" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.963" tests="36">
+    <testcase classname="TimeTrackingService clockIn creates an open entry" name="TimeTrackingService clockIn creates an open entry" time="0.009">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn emits timeEntry:clockedIn event" name="TimeTrackingService clockIn emits timeEntry:clockedIn event" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn throws for unknown employee" name="TimeTrackingService clockIn throws for unknown employee" time="0.021">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn throws for blocked employee" name="TimeTrackingService clockIn throws for blocked employee" time="0.002">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn throws for inactive employee" name="TimeTrackingService clockIn throws for inactive employee" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn throws if already clocked in" name="TimeTrackingService clockIn throws if already clocked in" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn saves note when provided" name="TimeTrackingService clockIn saves note when provided" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn defaults clockIn to now" name="TimeTrackingService clockIn defaults clockIn to now" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn throws for invalid clockIn date" name="TimeTrackingService clockIn throws for invalid clockIn date" time="0.004">
+    </testcase>
+    <testcase classname="TimeTrackingService clockIn throws for missing employeeId" name="TimeTrackingService clockIn throws for missing employeeId" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut closes the open entry" name="TimeTrackingService clockOut closes the open entry" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut emits timeEntry:clockedOut event" name="TimeTrackingService clockOut emits timeEntry:clockedOut event" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut throws if not clocked in" name="TimeTrackingService clockOut throws if not clocked in" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut throws for unknown employee" name="TimeTrackingService clockOut throws for unknown employee" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut throws if clockOut before clockIn" name="TimeTrackingService clockOut throws if clockOut before clockIn" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut adds note on clock-out" name="TimeTrackingService clockOut adds note on clock-out" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService clockOut throws for invalid clockOut date" name="TimeTrackingService clockOut throws for invalid clockOut date" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService getOpenEntry returns open entry when clocked in" name="TimeTrackingService getOpenEntry returns open entry when clocked in" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService getOpenEntry returns null when not clocked in" name="TimeTrackingService getOpenEntry returns null when not clocked in" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService getOpenEntry throws for empty employeeId" name="TimeTrackingService getOpenEntry throws for empty employeeId" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService isClockedIn returns true when clocked in" name="TimeTrackingService isClockedIn returns true when clocked in" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService isClockedIn returns false when not clocked in" name="TimeTrackingService isClockedIn returns false when not clocked in" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService adjustEntry adjusts clockIn and clockOut" name="TimeTrackingService adjustEntry adjusts clockIn and clockOut" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService adjustEntry emits timeEntry:adjusted event" name="TimeTrackingService adjustEntry emits timeEntry:adjusted event" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService adjustEntry throws for unknown entry id" name="TimeTrackingService adjustEntry throws for unknown entry id" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService adjustEntry throws for invalid dates" name="TimeTrackingService adjustEntry throws for invalid dates" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesByEmployee returns entries for employee" name="TimeTrackingService getEntriesByEmployee returns entries for employee" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesByEmployee returns empty array when none" name="TimeTrackingService getEntriesByEmployee returns empty array when none" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesByEmployee throws for empty employeeId" name="TimeTrackingService getEntriesByEmployee throws for empty employeeId" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesByEmployeeAndDateRange filters entries in range" name="TimeTrackingService getEntriesByEmployeeAndDateRange filters entries in range" time="0.003">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesByEmployeeAndDateRange throws for invalid dates" name="TimeTrackingService getEntriesByEmployeeAndDateRange throws for invalid dates" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesForDay returns entries for the given day" name="TimeTrackingService getEntriesForDay returns entries for the given day" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService getEntriesForDay returns empty array for different day" name="TimeTrackingService getEntriesForDay returns empty array for different day" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService deleteEntry deletes an entry" name="TimeTrackingService deleteEntry deletes an entry" time="0.001">
+    </testcase>
+    <testcase classname="TimeTrackingService deleteEntry returns false for unknown entry" name="TimeTrackingService deleteEntry returns false for unknown entry" time="0">
+    </testcase>
+    <testcase classname="TimeTrackingService deleteEntry throws for empty entryId" name="TimeTrackingService deleteEntry throws for empty entryId" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="LeaveService" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:36" time="0.988" tests="33">
+    <testcase classname="LeaveService requestLeave creates and returns a pending leave" name="LeaveService requestLeave creates and returns a pending leave" time="0.009">
+    </testcase>
+    <testcase classname="LeaveService requestLeave emits leave:requested event" name="LeaveService requestLeave emits leave:requested event" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService requestLeave throws for unknown employee" name="LeaveService requestLeave throws for unknown employee" time="0.022">
+    </testcase>
+    <testcase classname="LeaveService requestLeave throws for blocked employee" name="LeaveService requestLeave throws for blocked employee" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService requestLeave throws for invalid type" name="LeaveService requestLeave throws for invalid type" time="0.004">
+    </testcase>
+    <testcase classname="LeaveService requestLeave throws for invalid dates" name="LeaveService requestLeave throws for invalid dates" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService requestLeave throws for overlapping pending leave" name="LeaveService requestLeave throws for overlapping pending leave" time="0.002">
+    </testcase>
+    <testcase classname="LeaveService requestLeave throws for overlapping approved leave" name="LeaveService requestLeave throws for overlapping approved leave" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService requestLeave allows non-overlapping leaves" name="LeaveService requestLeave allows non-overlapping leaves" time="0">
+    </testcase>
+    <testcase classname="LeaveService requestLeave uses empty string reason when not provided" name="LeaveService requestLeave uses empty string reason when not provided" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService approve approves a pending leave" name="LeaveService approve approves a pending leave" time="0">
+    </testcase>
+    <testcase classname="LeaveService approve emits leave:approved" name="LeaveService approve emits leave:approved" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService approve throws for unknown leave" name="LeaveService approve throws for unknown leave" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService approve throws for empty approverId" name="LeaveService approve throws for empty approverId" time="0">
+    </testcase>
+    <testcase classname="LeaveService approve throws if already approved" name="LeaveService approve throws if already approved" time="0.004">
+    </testcase>
+    <testcase classname="LeaveService reject rejects a pending leave" name="LeaveService reject rejects a pending leave" time="0">
+    </testcase>
+    <testcase classname="LeaveService reject emits leave:rejected" name="LeaveService reject emits leave:rejected" time="0">
+    </testcase>
+    <testcase classname="LeaveService reject throws for unknown leave" name="LeaveService reject throws for unknown leave" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService cancel cancels a leave" name="LeaveService cancel cancels a leave" time="0">
+    </testcase>
+    <testcase classname="LeaveService cancel emits leave:cancelled" name="LeaveService cancel emits leave:cancelled" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService cancel throws if already cancelled" name="LeaveService cancel throws if already cancelled" time="0">
+    </testcase>
+    <testcase classname="LeaveService getById returns leave by id" name="LeaveService getById returns leave by id" time="0">
+    </testcase>
+    <testcase classname="LeaveService getById throws for unknown id" name="LeaveService getById throws for unknown id" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService getByEmployee returns employee leaves" name="LeaveService getByEmployee returns employee leaves" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService getByEmployee returns empty when none" name="LeaveService getByEmployee returns empty when none" time="0">
+    </testcase>
+    <testcase classname="LeaveService getPending / getApproved getPending returns pending leaves" name="LeaveService getPending / getApproved getPending returns pending leaves" time="0">
+    </testcase>
+    <testcase classname="LeaveService getPending / getApproved getApproved returns approved leaves" name="LeaveService getPending / getApproved getApproved returns approved leaves" time="0">
+    </testcase>
+    <testcase classname="LeaveService getTotalApprovedDays sums approved leave days in range" name="LeaveService getTotalApprovedDays sums approved leave days in range" time="0.001">
+    </testcase>
+    <testcase classname="LeaveService getTotalApprovedDays excludes pending leaves" name="LeaveService getTotalApprovedDays excludes pending leaves" time="0">
+    </testcase>
+    <testcase classname="LeaveService isOnLeave returns true if employee is on approved leave" name="LeaveService isOnLeave returns true if employee is on approved leave" time="0">
+    </testcase>
+    <testcase classname="LeaveService isOnLeave returns false when not on leave" name="LeaveService isOnLeave returns false when not on leave" time="0">
+    </testcase>
+    <testcase classname="LeaveService isOnLeave returns false for pending leave" name="LeaveService isOnLeave returns false for pending leave" time="0.002">
+    </testcase>
+    <testcase classname="LeaveService isOnLeave throws for invalid date" name="LeaveService isOnLeave throws for invalid date" time="0">
+    </testcase>
+  </testsuite>
+  <testsuite name="Integration: Full workday cycle" errors="0" failures="0" skipped="0" timestamp="2026-06-05T01:30:37" time="0.985" tests="17">
+    <testcase classname="Integration: Full workday cycle employee clocks in, works 8 hours, clocks out, appears in daily report" name="Integration: Full workday cycle employee clocks in, works 8 hours, clocks out, appears in daily report" time="0.011">
+    </testcase>
+    <testcase classname="Integration: Blocked employee cannot clock in blocks employee and prevents clock-in" name="Integration: Blocked employee cannot clock in blocks employee and prevents clock-in" time="0.022">
+    </testcase>
+    <testcase classname="Integration: Blocked employee cannot clock in unblocked employee can clock in again" name="Integration: Blocked employee cannot clock in unblocked employee can clock in again" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Leave request lifecycle manager approves leave and isOnLeave returns true" name="Integration: Leave request lifecycle manager approves leave and isOnLeave returns true" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Leave request lifecycle rejected leave does not count as on-leave" name="Integration: Leave request lifecycle rejected leave does not count as on-leave" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Leave request lifecycle cancelled leave does not count as on-leave" name="Integration: Leave request lifecycle cancelled leave does not count as on-leave" time="0">
+    </testcase>
+    <testcase classname="Integration: Weekly overtime with tiered strategy uses tiered strategy when set on reportService" name="Integration: Weekly overtime with tiered strategy uses tiered strategy when set on reportService" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Department summary across multiple employees aggregates hours from different departments" name="Integration: Department summary across multiple employees aggregates hours from different departments" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Time entry correction adjusts entry and report reflects corrected hours" name="Integration: Time entry correction adjusts entry and report reflects corrected hours" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Observer event chain fires events in correct order during full workflow" name="Integration: Observer event chain fires events in correct order during full workflow" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Top workers analytics correctly ranks employees by hours in a given period" name="Integration: Top workers analytics correctly ranks employees by hours in a given period" time="0">
+    </testcase>
+    <testcase classname="Integration: Monthly report accumulates entries sums all entries across the month" name="Integration: Monthly report accumulates entries sums all entries across the month" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Prevent double clock-in cannot clock in twice without clocking out" name="Integration: Prevent double clock-in cannot clock in twice without clocking out" time="0">
+    </testcase>
+    <testcase classname="Integration: Prevent double clock-in can clock in again after clocking out" name="Integration: Prevent double clock-in can clock in again after clocking out" time="0">
+    </testcase>
+    <testcase classname="Integration: Overlapping leave prevention cannot request overlapping leaves of different types" name="Integration: Overlapping leave prevention cannot request overlapping leaves of different types" time="0.006">
+    </testcase>
+    <testcase classname="Integration: Overlapping leave prevention can request non-overlapping leaves sequentially" name="Integration: Overlapping leave prevention can request non-overlapping leaves sequentially" time="0.001">
+    </testcase>
+    <testcase classname="Integration: Unique ID generation registers multiple employees with unique IDs" name="Integration: Unique ID generation registers multiple employees with unique IDs" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
