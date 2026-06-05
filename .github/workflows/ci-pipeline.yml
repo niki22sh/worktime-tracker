@@ -25,24 +25,17 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      # ─── 3. Setup Java (required by SonarScanner CLI) ──────────────────────
-      - name: Set up Java 21
-        uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      # ─── 4. Install dependencies ───────────────────────────────────────────
+      # ─── 3. Install dependencies ───────────────────────────────────────────
       - name: Install dependencies
         run: npm ci
 
-      # ─── 5. Run tests with coverage ────────────────────────────────────────
+      # ─── 4. Run tests with coverage ────────────────────────────────────────
       - name: Run tests & generate coverage
         run: npm run test:ci
         env:
           CI: true
 
-      # ─── 6. Upload HTML coverage report artifact ───────────────────────────
+      # ─── 5. Upload HTML coverage report artifact ───────────────────────────
       - name: Upload HTML coverage report
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4
         if: always()
@@ -51,7 +44,7 @@ jobs:
           path: coverage/lcov-report/
           retention-days: 30
 
-      # ─── 7. Upload XML/JUnit reports artifact ──────────────────────────────
+      # ─── 6. Upload XML/JUnit reports artifact ──────────────────────────────
       - name: Upload JUnit & Cobertura XML reports
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4
         if: always()
@@ -63,12 +56,22 @@ jobs:
             coverage/lcov.info
           retention-days: 30
 
-      # ─── 8. SonarCloud analysis + Quality Gate ─────────────────────────────
-      # sonarqube-scan-action@v6 автоматично перевіряє Quality Gate
-      # та завершує pipeline з помилкою якщо gate не пройдено
+      # ─── 7. Install sonar-scanner and run analysis ─────────────────────────
+      # Встановлюємо sonar-scanner вручну через npm щоб уникнути
+      # проблеми з HTTP 403 при завантаженні JRE від SonarCloud
+      - name: Install sonar-scanner
+        run: npm install -g sonar-scanner
+
       - name: SonarCloud Scan
-        uses: sonarsource/sonarqube-scan-action@2500896589ef8f7247069a56136f8dc177c27ccf # v6
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=niki22sh_worktime-tracker \
+            -Dsonar.organization=niki22sh \
+            -Dsonar.sources=src \
+            -Dsonar.tests=tests \
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+            -Dsonar.testExecutionReportPaths=reports/junit.xml \
+            -Dsonar.host.url=https://sonarcloud.io
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://sonarcloud.io
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
