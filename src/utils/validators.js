@@ -15,8 +15,14 @@ function validateEmail(email) {
   if (typeof email !== 'string') {
     throw new TypeError('email must be a string');
   }
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!re.test(email.trim())) {
+  const trimmed = email.trim();
+  const atIndex = trimmed.indexOf('@');
+  if (atIndex < 1) {
+    throw new TypeError(`Invalid email format: ${email}`);
+  }
+  const local = trimmed.slice(0, atIndex);
+  const domain = trimmed.slice(atIndex + 1);
+  if (local.length === 0 || domain.length < 3 || !domain.includes('.')) {
     throw new TypeError(`Invalid email format: ${email}`);
   }
 }
