@@ -121,10 +121,11 @@ function msToHours(ms) {
  */
 function eachDayBetween(start, end) {
   const days = [];
-  const cursor = startOfDay(start);
+  let cursor = startOfDay(start);
   const finish = startOfDay(end);
   while (cursor <= finish) {
     days.push(new Date(cursor));
+    cursor = new Date(cursor);
     cursor.setDate(cursor.getDate() + 1);
   }
   return days;

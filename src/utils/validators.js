@@ -22,7 +22,7 @@ function validateEmail(email) {
 }
 
 function validateDate(value, fieldName) {
-  if (!(value instanceof Date) || isNaN(value.getTime())) {
+  if (!(value instanceof Date) || Number.isNaN(value.getTime())) {
     throw new TypeError(`${fieldName} must be a valid Date`);
   }
 }
@@ -34,13 +34,13 @@ function validateEnum(value, allowed, fieldName) {
 }
 
 function validatePositiveNumber(value, fieldName) {
-  if (typeof value !== 'number' || isNaN(value) || value <= 0) {
+  if (typeof value !== 'number' || Number.isNaN(value) || value <= 0) {
     throw new TypeError(`${fieldName} must be a positive number`);
   }
 }
 
 function validateNonNegativeNumber(value, fieldName) {
-  if (typeof value !== 'number' || isNaN(value) || value < 0) {
+  if (typeof value !== 'number' || Number.isNaN(value) || value < 0) {
     throw new TypeError(`${fieldName} must be a non-negative number`);
   }
 }

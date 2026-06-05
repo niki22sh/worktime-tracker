@@ -243,7 +243,8 @@ class ReportService {
   _sumClosedMs(entries) {
     return entries.reduce((sum, e) => {
       const ms = e.getDurationMs();
-      return ms !== null ? sum + ms : sum;
+      if (ms === null) { return sum; }
+      return sum + ms;
     }, 0);
   }
 }
