@@ -2,6 +2,10 @@
 
 > Реалізовано мовою **Node.js** без зовнішніх залежностей — усі дані зберігаються в оперативній пам'яті (In-Memory).
 
+
+[![CI Pipeline](https://github.com/niki22sh/worktime-tracker/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/niki22sh/worktime-tracker/actions)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=niki22sh_worktime-tracker&metric=alert_status)](https://sonarcloud.io/dashboard?id=niki22sh_worktime-tracker)
+
 ---
 
 ## Зміст
