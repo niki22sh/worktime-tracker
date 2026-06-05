@@ -63,20 +63,12 @@ jobs:
             coverage/lcov.info
           retention-days: 30
 
-      # ─── 8. SonarCloud analysis ────────────────────────────────────────────
+      # ─── 8. SonarCloud analysis + Quality Gate ─────────────────────────────
+      # sonarqube-scan-action@v6 автоматично перевіряє Quality Gate
+      # та завершує pipeline з помилкою якщо gate не пройдено
       - name: SonarCloud Scan
         uses: sonarsource/sonarqube-scan-action@2500896589ef8f7247069a56136f8dc177c27ccf # v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
-
-      # ─── 9. Quality Gate check ─────────────────────────────────────────────
-      - name: Check SonarCloud Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@d304d050d14f39b3cd56a37c8fa0c88a21c64ea6 # v1
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: https://sonarcloud.io
-
-
